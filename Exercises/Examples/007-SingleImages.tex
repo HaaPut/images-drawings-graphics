@@ -1,0 +1,125 @@
+\documentclass[12pt]{article}
+
+\usepackage{lipsum}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{float} % for H specifier
+\usepackage{subcaption} % subfigures
+
+\usepackage{xcolor}
+
+%\usepackage{endfloat} 
+%nomarkers
+%nolists
+%figuresonly
+%\renewcommand{\efloatseparator}{\bigskip}
+
+\begin{document}
+
+\section{Introduction}
+Images in \LaTeX{} are handled by the \texttt{graphicx} package. We include the actual image file using \texttt{\textbackslash includegraphics}.
+
+However, we usually wrap the image in a \texttt{\textbackslash begin\{figure\}} environment. This is called a \textbf{float}. \texttt{\textbackslash begin\{table\}} is another example of a float.  
+Floats drift to the optimal location (top of page, bottom, etc.)to prevent ugly page breaks. You guide this behavior using \textbf{placement specifiers}:
+\begin{itemize}
+    \item \texttt{h} (here) - Place around here (respecting `aesthetics').
+    \item \texttt{t} (top), \texttt{b} (bottom), \texttt{p} (page of floats).
+    \item \texttt{H} (HERE) - Exactly here, (requires the \texttt{float} package).
+\end{itemize}
+
+\section{Single Images}
+\lipsum[1-5]
+\begin{figure} % change
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/greenCells.png}
+    \caption{This is an image of  green cells. There is another figure (Figure \ref{fig:grayCells}) full of gray cells! }
+    \label{fig:greenCells}
+\end{figure}
+
+{\color{red}
+\lipsum[4-9]
+}
+%!h -> forget aesthetic put around here
+% H -> put here, dont care about nothin
+% h -> put around here respecting aesthetics
+\begin{figure}[!t]%[H]%[!h]%[!htbp] %[h] v/s [!h] v/s [H] push all to end coz figure voilates limits v/s
+    \centering
+    \includegraphics[width=\textwidth]{images/blue.jpg}
+    \caption{The blue figure}
+    \label{fig:blueCross}
+\end{figure}
+
+{\color{green}
+\lipsum[1-5]
+}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/yellow.jpg}
+    \caption{The yellow figure}
+    \label{fig:yellowCross}
+\end{figure}
+
+{\color{blue}
+\lipsum[1-5]
+}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/red.jpg}
+    \caption{The red figure}
+    \label{fig:redCross}
+\end{figure}
+
+{\color{orange}
+\lipsum[1-5]
+}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/cyan.jpg}
+    \caption{The cyan figure}
+    \label{fig:cyanCross}
+\end{figure}
+
+{\color{purple}
+\lipsum[1-5]
+}
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/orange.jpg}
+    \caption{The orange figure}
+    \label{fig:orangeCross}
+\end{figure}
+
+{\color{violet}
+\lipsum[1-5]
+}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{images/grayCells.png}
+    \caption{This is an image of gray cells pretty drab compared to the colorfull Figure \ref{fig:greenCells}}
+    \label{fig:grayCells}
+\end{figure}
+
+{\color{green!50!blue}
+\lipsum[10-17]
+}
+
+\twocolumn
+\section{Image in two column documents}
+\lipsum[1]
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/blue.jpg}
+    \caption{Blue Cross}
+    \label{fig:2colBlueCross}
+\end{figure}
+\color{red}\lipsum[3-9]
+\begin{figure*}[h]
+    \centering
+    \includegraphics[width=\linewidth]{images/grayCells.png}
+    \caption{Across the two column}
+    \label{fig:acrossColumns}
+\end{figure*}
+\color{blue}\lipsum[1-7]
+\end{document}

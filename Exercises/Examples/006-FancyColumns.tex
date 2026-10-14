@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{cutwin} % Enables cutout windows in paragraphs
+\usepackage{tcolorbox}
+\usepackage{lipsum}
+\usepackage[left=26mm,right=20mm]{geometry}
+\usepackage{marginnote}
+\usepackage[T1]{fontenc}
+
+
+\setlength{\marginparwidth}{20mm}
+\reversemarginpar
+\opencutcenter 
+
+\begin{document}
+
+% Redefine cut window stuff
+\renewcommand{\windowpagestuff}{%
+    \centering
+    \begin{tcolorbox}[colback=blue!10, colframe=black, width=4cm, height=3cm, valign=center]
+        \large \centering \color{red}
+        Something catchy goes here to catch your eye.
+    \end{tcolorbox}%
+}
+
+\section*{\textsc{How to be unnecesarily fancy about page organization} }
+\begin{minipage}[t]{0.65\textwidth}
+\begin{cutout}{7}{0.3\textwidth}{0.3\textwidth}{9}
+This is a long paragraph that demonstrates a cutout window. The cutwin package cuts a hole directly in the middle of the text block. Text on the top will span the full line, and then line by line, text will be split between the left and right margins until the cutout lines are completed. After the specified number of lines, full-width text resumes naturally. \marginnote{\scriptsize \color{orange} A left-margin note about the text to add a caveate to the text.}[7cm] \lipsum[3-5]
+\end{cutout}
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{0.25\textwidth}
+    \vspace{15mm}
+    \lipsum[1]
+\end{minipage}
+\end{document}
