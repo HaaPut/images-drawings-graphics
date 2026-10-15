@@ -1,0 +1,74 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{geometry}
+\geometry{
+top=1in,
+left=1in,
+right=1in,
+}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\title{\vspace{-35mm}
+\includegraphics[width=0.6\textwidth]{../Slides/images/micm-logo.png}}
+\author{\textbf{Writing with \LaTeX{}}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\textbf{Workshop Lead :}\qquad  Tabish Syed \\[2mm]
+\textbf{Duration :}\qquad 2 hours (approximate) \\[2mm]
+\textbf{Registration Link :} \qquad NA \\[2mm]
+\vspace{-5mm}
+\subsection*{Prerequisites}
+
+\begin{enumerate}[leftmargin=3em]
+  \item Web browser and internet access
+  \item \href{https://www.overleaf.com}{Overleaf} account.
+\end{enumerate}
+
+\section*{Summary}
+
+A hands-on introduction to \LaTeX{} for scientific writing. Learn the basics of document preparation, how to automate cross-referencing and bibliographic citations, and how to arrange figures and visualizations
+for publication-ready papers.
+
+\section*{Learning Objectives}
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Explain what \LaTeX{} is}, and produce a typeset PDF document from source code using a \LaTeX{} editor and compiler (Overleaf).
+  \item Build and maintain a \textbf{bibliography}: create a \texttt{.bib} database, cite sources with \verb|\cite| commands, and format   the reference list.
+  \item \textbf{Compose publication--quality figures}: insert, size, position, and caption images; arrange multi-panel figure grids; and cross-reference them so every figure number updates automatically.
+\end{enumerate}
+
+\section*{Content}
+\begin{itemize}
+\item[]\textbf{Part 1 --- Basic Text Formatting (30 minutes)}
+\begin{itemize}[label=$\bullet$,leftmargin=2em]
+  \item \texttt{documentclass}, \texttt{sections}, \texttt{paragraphs} and \texttt{columns}
+  \item Equations and cross-referencing
+\end{itemize}
+
+\item[]\textbf{Part 2 --- Images and Figures (1 hour)}
+\begin{itemize}[label=$\bullet$,leftmargin=2em]
+  \item Single-image figure: \verb|\includegraphics|, the \texttt{figure} environment, figure placement
+  \item Multi-panel figures:
+    \begin{itemize}[label=$-$,topsep=2pt]
+      \item Grid of images with \texttt{tabular}
+      \item Grid of images using \texttt{subfigure}
+      \item Grid of images with \texttt{picture}/\texttt{put}
+    \end{itemize}
+\end{itemize}
+
+\item[]\textbf{Part 3 --- Drawings with TikZ (30 minutes)}
+\begin{itemize}[label=$\bullet$,leftmargin=2em]
+  \item Basic \verb|\draw| command: lines, arrows, simple shapes, line
+        width and color
+  \item Annotating images with TikZ
+\end{itemize}
+
+\subsection*{Part 4  --- Annotating Equations and Chemical Structures (Optional)}
+\end{itemize}
+\end{document}
