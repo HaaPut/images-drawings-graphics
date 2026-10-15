@@ -103,32 +103,35 @@
 \end{frame}
 
 \begin{frame}{First \LaTeX{} Document}
-\textbackslash \texttt{documentclass[options]}\{ \}\\
-\textbackslash \texttt{begin\{document\}}\\
-\hspace{2mm}$\cdots$\\
-\textbackslash \texttt{end\{document\}}
-\vspace{5mm}
-\uncover<2->{
-\begin{center}
-\begin{tabular}{@{}ll@{}}
-\toprule
-Class & Typical use\\
-\midrule
-\texttt{article} & journal papers, reports, homework\\
-\texttt{report} & longer documents, chapters allowed\\
-\texttt{book} & books, thesis\\
-\texttt{beamer} & presentation slides\\
-\bottomrule
-\end{tabular}
-\end{center}
-Class options in square brackets: \texttt{11pt}, \texttt{a4paper},
-\texttt{twocolumn}, \texttt{draft}. 
-}
-\uncover<3->{
-\begin{center}
-    \exersice{Examples/001-FirstDocument.tex}
-\end{center}
-}
+  \textbackslash \texttt{documentclass[options]}\{ \}\\
+  \textbackslash \texttt{begin\{document\}}\\
+  \hspace{2mm}$\cdots$\\
+  \textbackslash \texttt{end\{document\}}
+  
+  \vspace{5mm}
+
+  \uncover<2->{
+    \begin{center}
+    \begin{tabular}{@{}ll@{}}
+    \toprule
+    Class & Typical use\\
+    \midrule
+    \texttt{article} & journal papers, reports, homework\\
+    \texttt{report} & longer documents, chapters allowed\\
+    \texttt{book} & books, thesis\\
+    \texttt{beamer} & presentation slides\\
+    \bottomrule
+    \end{tabular}
+    \end{center}
+    Class options in square brackets: \texttt{11pt}, \texttt{a4paper},
+    \texttt{twocolumn}, \texttt{draft}. 
+  }
+
+  \uncover<3->{
+    \begin{center}
+        \exersice{Examples/001-FirstDocument.tex}
+    \end{center}
+  }
 \end{frame}
 
 \begin{frame}{Compilation}
@@ -232,17 +235,6 @@ Alternatively, press the \texttt{Ctrl+Enter} or click `\texttt{Recompile}' in \t
 \end{equation}
 \end{frame}
 
-% \begin{picture}(200,210)
-%     \includegraphics<1->[width=0.7\textwidth]{images/microscopyImage.png}
-%     % \put(-195,70){
-%     %     \includegraphics<2>[width=0.1\textwidth]{images/nolabelst.png}
-%     % }
-%     \put(-195,10){
-%         \includegraphics<2>[width=0.5\textwidth]{images/st.png}
-%     }
-%     \end{picture}
-
-
 
 \begin{frame}{Chemical Drawings}
     Behold, the grand caravan of amino acids marched briskly through the meadows of Alanin, each one wearing a tiny hat made of peptides and whispering secrets to the wind.
@@ -251,7 +243,11 @@ Alternatively, press the \texttt{Ctrl+Enter} or click `\texttt{Recompile}' in \t
 
 \begin{frame}
     \begin{center}
-        \includegraphics[width=0.4\textwidth]{images/feedback-qr.png}
+        \begin{tabular}{cc}
+        \includegraphics[width=0.2\textwidth]{images/feedback-qr.png} &
+        \includegraphics[width=0.2\textwidth]{images/micm-mailing-list-qr.png}\\
+        Workshop Feedback & MiCM Mailing List
+        \end{tabular}
     \end{center}
 \end{frame}
 
