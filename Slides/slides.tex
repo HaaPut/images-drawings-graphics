@@ -22,7 +22,7 @@
 \definecolor{micmSlate}{RGB}{132,172,182}
 \definecolor{micmDark}{RGB}{80,80,80}
 
-\newcommand{\exersice}[1]{\colorbox{micmGreen!20}{\color{red}\texttt{#1}}}
+\newcommand{\exersice}[1]{\colorbox{micmGreen!20}{{\color{red}\textbf{Hands On Task:}} \color{blue}\texttt{#1}}}
 
 \mode<presentation>
 {
@@ -34,6 +34,28 @@
   \setbeamercolor{palette secondary}{bg=micmTeal, fg=white}
   \setbeamercolor{palette tertiary}{bg=micmGreen, fg=white}
 }
+
+
+% Define Title page
+
+\setbeamertemplate{title page}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[fill=micmBand,anchor=north, minimum height=0.20\paperheight, minimum width=\paperwidth] (headband) at (current page.north) {};
+        \node[anchor=north east] (sponsor-cg) at (headband.south east)
+        {\includegraphics[width=0.35\textwidth]{images/cccg-logo.png}};
+        \node[anchor=north west] (sponsor-d2r) at (headband.south west) {\includegraphics[width=0.35\textwidth]{images/d2r-logo.png}};
+        \node[anchor=west] (micm-logo) at (headband.west) {\includegraphics[width=0.45\textwidth]{images/micm-logo.png}};
+        \node[anchor=east] (cdsi-logo) at (headband.east) {\includegraphics[width=0.35\textwidth]{images/cdsi-logo.png}};
+        \node[] (title) at (current page.center) {\usebeamerfont{title}{\inserttitle}};
+        \node[anchor=west] (name) at ([yshift=0.15\textheight]current page.south west) {\usebeamerfont{institute}{\textcolor{black}{\textbf{Workshop Lead: }\insertauthor}\par}};
+        \node[anchor=north west] (date) at
+        (name.south west)
+         {\usebeamerfont{institute}{\textbf{Date: }\textcolor{black}{\insertdate}\par}};
+    \end{tikzpicture}
+ }
+
+
+ % Define Template for each page
 
 \newcommand{\micmlogofile}{images/micm-logo.png}
 \setbeamertemplate{footline}{%
@@ -63,8 +85,8 @@
 
 \author[Tabish]{Tabish Syed}
 \institute[McGill]{McGill University}
-\title[Latex Workshop]{Images, Drawings and Graphics with Latex}
-
+\title[Latex Workshop]{Writing With \LaTeX{}}
+\date{October 30th, 2026}
 
 \begin{document}
 \maketitle
@@ -107,7 +129,7 @@
   \textbackslash \texttt{begin\{document\}}\\
   \hspace{2mm}$\cdots$\\
   \textbackslash \texttt{end\{document\}}
-  
+
   \vspace{5mm}
 
   \uncover<2->{
@@ -129,7 +151,7 @@
 
   \uncover<3->{
     \begin{center}
-        \exersice{Examples/001-FirstDocument.tex}
+        \exersice{Create New Project On Overleaf}
     \end{center}
   }
 \end{frame}
@@ -151,7 +173,7 @@ Alternatively, press the \texttt{Ctrl+Enter} or click `\texttt{Recompile}' in \t
 
 \uncover<2->{
 \begin{center}
-    \exersice{Examples/001-FirstDocument.tex}
+    \exersice{Try on overleaf}
 \end{center}
 }
 
@@ -159,34 +181,30 @@ Alternatively, press the \texttt{Ctrl+Enter} or click `\texttt{Recompile}' in \t
 
 \begin{frame}{Document Structure}
 \begin{center}
-\uncover<1->{\exersice{Examples/002-SimpleText.tex}}
+\uncover<1->{\exersice{Exercises/001-SimpleText.tex}}
 
 \vspace{1cm}
 
-\uncover<2->{\exersice{Examples/003-StructuredDocument.tex}}
+\uncover<2->{\exersice{Exercises/002-StructuredDocument.tex}}
 
 \vspace{1cm}
 
-\uncover<3->{\exersice{Examples/004-SectionsColumnsMinipages.tex}}
+\uncover<3->{\exersice{Exercises/004-AddingReferences.tex}}
 \end{center}
 
 \end{frame}
-
-% \begin{frame}{Non-English Documents}
-    
-% \end{frame}
 
 \section{Images}
 
 \begin{frame}{Single Image Figures}
     \begin{center}
-        \exersice{Examples/007-SingleImages.tex}
+        \exersice{Exercises/100-SingleImages.tex}
     \end{center}
 \end{frame}
 
 \begin{frame}{Multi-Panel Images}
     \begin{center}
-        \exersice{Examples/008-ImageGrid.tex}
+        \exersice{Exercises/101-ImageGrid.tex}
     \end{center}
 \end{frame}
 
@@ -195,12 +213,12 @@ Alternatively, press the \texttt{Ctrl+Enter} or click `\texttt{Recompile}' in \t
 \begin{frame}{Drawings}
     \begin{center}
     \only<1-2>{
-        \exersice{Examples/009-TikzDrawings.tex}
+        \exersice{Exercises/102-TikzDrawings.tex}
 
         \vspace{1cm}
         
         \uncover<2>{
-        \exersice{Examples/010-ImageLabelling.tex}
+        \exersice{Exercises/103-StandaloneAnnotatedFigure.tex}
         }
     }
     \includegraphics<3>[width=\textwidth]{images/synapse.pdf}

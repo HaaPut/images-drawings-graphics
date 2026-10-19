@@ -1,0 +1,78 @@
+\documentclass[12pt]{article}
+
+\usepackage{lipsum}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\graphicspath{ {./data/} }
+
+\usepackage{float} % for H specifier
+\usepackage{subcaption} % subfigures
+
+\usepackage{xcolor}
+
+%\usepackage{endfloat} 
+%nomarkers
+%nolists
+%figuresonly
+%\renewcommand{\efloatseparator}{\bigskip}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\newcommand{\placeholder}[2]{\begin{tikzpicture}\node[fill=red!50!yellow!30!white,minimum width=#1\linewidth,minimum height=#1\linewidth]{#2};\end{tikzpicture}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\section{Introduction}
+Images in \LaTeX{} are handled by the \texttt{graphicx} package. We include the actual image file using \texttt{\textbackslash includegraphics}.
+
+However, we usually wrap the image in a \texttt{\textbackslash begin\{figure\}} environment. This is called a \textbf{float}. \texttt{\textbackslash begin\{table\}} is another example of a float.  
+Floats drift to the optimal location (top of page, bottom, etc.)to prevent ugly page breaks. You guide this behavior using \textbf{placement specifiers}:
+\begin{itemize}
+    \item \texttt{h} (here) - Place around here (respecting `aesthetics').
+    \item \texttt{t} (top), \texttt{b} (bottom), \texttt{p} (page of floats).
+    \item \texttt{H} (HERE) - Exactly here, (requires the \texttt{float} package).
+\end{itemize}
+
+\section{Single Images}
+\lipsum[1-5]
+
+
+\begin{figure} 
+    \centering
+    \placeholder{0.4}{Insert image of green cells using \texttt{includegraphics}}
+    %..use \caption to add caption
+    %..use \label to add a label to this figure for cross referencing
+\end{figure}
+
+{\color{red}
+\lipsum[4-9]
+}
+%!h -> forget aesthetic put around here
+% H -> put here, dont care about nothin
+% h -> put around here respecting aesthetics
+\begin{figure}[!t]%[!t]%[H]%[!h]%[!htbp] %[h] v/s [!h] v/s [H] push all to end coz figure voilates limits v/s
+    \centering
+    \includegraphics[width=\textwidth]{images/blue.jpg}
+    \caption{The blue figure}
+    \label{fig:blueCross}
+\end{figure}
+
+{\color{blue}
+\lipsum[13-17]
+}
+
+\twocolumn
+\section{Image in two column documents}
+\lipsum[1]
+%..insert figure in two column mode
+{\color{red}\lipsum[3-9]}
+
+
+\begin{figure*}[h]
+    \centering
+    \placeholder{0.4}{\texttt{figure*} for full figure across all columns}
+    %..add caption
+    %..add label
+\end{figure*}
+\color{blue}\lipsum[1-7]
+\end{document}
