@@ -13,10 +13,10 @@ A hands-on, modular introductory workshop on **LaTeX** designed for beginners an
 
 
 ## Requirements
-No installation required. Sign up for a free account on overleaf.
+No installation required. Sign up for a free account on Overleaf.
 * [Overleaf](https://www.overleaf.com/register) account
 
-## Sofware
+## Software
 (Not recommended for beginners)
 If you prefer working offline on your local machine, install a TeX distribution and an editor:
 .
@@ -62,7 +62,10 @@ If you prefer working offline on your local machine, install a TeX distribution 
  Open `Slides/slides.pdf` or compile `Slides/slides.tex` to PDF to view the presentation.
 
 **Run the Exercises:**
- Navigate into `Exercises/` and upload the `.tex` files to overleaf and go over the examples in numeric order.
+- Sign in to your Overleaf account.
+- In your dashboard, click `New Project` -> `Existing project(.zip)`.
+- Upload (drag and drop) the `hands-on-latex.zip` file found inside the `intro-to-latex` folder.
+- Open the project and follow the examples in numerical order.
 
 ## Recommended Resources
 * [Overleaf Tutorial](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)
